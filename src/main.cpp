@@ -56,7 +56,7 @@ int main(int argc, char** argv)
   cout << "Press any key to continue ('q' to quit)" << endl;
   string t;
 	cin >> t;
-	if(t.find('q') != string::npos) {
+	if (t.find('q') != string::npos) {
 		cerr << "quit" << endl;
 		fin.close(); fout.close();
 		return 1;
@@ -64,7 +64,6 @@ int main(int argc, char** argv)
 
 	vector<complex<double> > v;
 	iir(v, f, fa, fb);
-
 	comp_write(fout, f, v);
 
 	fin.close();
@@ -72,21 +71,15 @@ int main(int argc, char** argv)
 
 	return 0;
 }
-
 void show(const vector<double>& v)
 {
 	for (decltype(v.size()) i = 0; i != v.size(); ++i)
 		cout << setw(20) << right << v[i] << endl;
 }
-
 void comp_write(ostream& fout, const Freq& f, const vector<complex<double> >& v)
 {
-	// a: phase, d: group delay
-	vector<double> a, d;
-
-	// calculate phase and group delay
-	arg_group_delay(a, d, v, f.count);
-
+	vector<double> a, d;                // a: phase, d: group delay
+	arg_group_delay(a, d, v, f.count);  // calculate phase and group delay
   double fr = f.begin;
 	// write freq, amplitude, phase, and group delay (separated by comma)
 	for (decltype(v.size()) i = 0; i != v.size(); ++i) {

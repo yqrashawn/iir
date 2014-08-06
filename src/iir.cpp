@@ -7,12 +7,10 @@ void iir (vector<complex<double> >& v, const Freq& f, const vector<double>& a, c
 	for (double i = f.begin; i <= f.end; i += f.count)
 		v.push_back( iir_calc(freq_to_z(i), a, b) );
 }
-
 complex<double> freq_to_z(const double f)
 {
 	return polar(1.0, M_PI * f);
 }
-
 complex<double>
 iir_calc(const complex<double> z, const vector<double>& a, const vector<double>& b)
 {
@@ -27,7 +25,6 @@ iir_calc(const complex<double> z, const vector<double>& a, const vector<double>&
 	}
 	return num/den;
 }
-
 void arg_group_delay (vector<double>& a, vector<double>& d, const vector<complex<double> >& v, const double df)
 {
   // phase
@@ -36,8 +33,8 @@ void arg_group_delay (vector<double>& a, vector<double>& d, const vector<complex
 		// phase unwrapping
 		double tmp = a[i];
 		if (i) {
-			double t = abs(a[i] - a[i-1]);
-			double ratio = floor(t/3.0);
+			const double t = abs(a[i] - a[i-1]);
+			const double ratio = floor(t/3.0);
 			if ( t >= 3 ) {
 				if (a[i] > a[i-1] ) tmp -= M_PI * ratio;
 				else if (a[i] < a[i-1] ) tmp += M_PI * ratio;
