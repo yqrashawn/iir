@@ -23,9 +23,17 @@ Or, if you want to export to PNG file:
 
 ## Setting
 
+You can change settings in the `factor.txt`.
+
  - `begin`: Staring frequency [0,1)
  - `end`: Ending frequency (0,1]
- - `count`: Sampling interval. It should be (`end`-`begin`)/(sampling freq), e.g., `0.001`.
+ - `count`: Sampling interval. It should be `(end - begin) / [sampling freq]`, e.g., `0.001`.
+ - `a` or `b` + [number]`: Factors of an IIR filter. `a` is for the numerator and `b` is for the denominator.
+
+Transfer function is computed according to the following equation:
+```math
+H(z) = \frac{\sum^M_{m=0}a_mz^{-m}}{\sum^N_{n=0}b_nz^{-n}}
+```
 
 Note: This tool uses the convention of MATLAB, that is, unit frequency is the Nyquist frequency.
 
