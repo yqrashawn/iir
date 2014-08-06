@@ -34,7 +34,7 @@ The transfer function of a given IIR filter is computed according to the followi
 
 <img src="http://chart.apis.google.com/chart?cht=tx&chl=\displaystyle H(z)=\frac{\sum^M_{m=0}a_mz^{-m}}{\sum^N_{n=0}b_nz^{-n}}"></img>
 
-Note that In most IIR filter designs coefficient b<sub>0</sub> is `1`.
+Note that in most IIR filter designs coefficient b<sub>0</sub> is `1`.
 
 This tool uses the convention of MATLAB, that is, unit frequency is the Nyquist frequency.
 
