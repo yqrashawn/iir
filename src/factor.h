@@ -4,12 +4,12 @@
 class Freq
 {
 public:
-	double begin;         // starting freq
-	double end;           // ending freq
-	double count;         // sampling interval
+  double begin;         // starting freq
+  double end;           // ending freq
+  double count;         // sampling interval
 
-	Freq();
-	Freq(double a, double b, double c);
+  Freq();
+  Freq(double a, double b, double c);
 };
 
 #endif
