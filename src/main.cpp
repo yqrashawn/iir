@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 	ifstream fin;
 	if (argc > 1)
 		fin.open(argv[1]);
-	else fin.open("factor.txt");
+	else fin.open("setting.txt");
 
 	ofstream fout;
 	if (argc > 2)
