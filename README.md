@@ -34,9 +34,9 @@ The transfer function of a given IIR filter is computed according to the followi
 
 <img src="http://chart.apis.google.com/chart?cht=tx&chl=\displaystyle H(z)=\frac{\sum^M_{m=0}a_mz^{-m}}{\sum^N_{n=0}b_nz^{-n}}"></img>
 
-Note: In most IIR filter designs coefficient b<sub>0</sub> is `1`.
+Note that In most IIR filter designs coefficient b<sub>0</sub> is `1`.
 
-Note: This tool uses the convention of MATLAB, that is, unit frequency is the Nyquist frequency.
+This tool uses the convention of MATLAB, that is, unit frequency is the Nyquist frequency.
 
  > To convert normalized frequency to angular frequency around the unit circle, multiply by π.
  > To convert normalized frequency back to hertz, multiply by half the sample frequency.<br>
